@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PeerLink · compassionate support</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #f1f5f9 0%, #f8fafc 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            line-height: 1.5;
+            color: #0f172a;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        /* main card – refined depth, softer palette */
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.1), 0 5px 12px -4px rgba(0, 0, 0, 0.05);
+            border-radius: 32px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.005);
+        }
+
+        /* subtle illustration / therapeutic symbol */
+        .illustration {
+            margin-bottom: 1.8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* hand-drawn style abstract – two figures, calm interaction */
+        .calm-svg {
+            width: 100px;
+            height: 100px;
+            color: #4f46e5;
+            opacity: 0.9;
+        }
+
+        /* main heading – softer weight, warm indigo */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            background: linear-gradient(145deg, #2c3e8f, #4f46e5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+        }
+
+        /* gentle tagline */
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 350;
+            color: #334155;
+            max-width: 380px;
+            margin: 0 auto 1.2rem auto;
+        }
+
+        /* descriptive paragraph – refined, spaced */
+        p {
+            font-size: 1rem;
+            color: #475569;
+            margin: 1.2rem 0 2rem 0;
+            padding: 0 0.5rem;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 60px;
+            padding: 0.75rem 1.2rem;
+            display: inline-block;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        /* call to action – elevated, friendly */
+        .btn {
+            background: #4f46e5;
+            color: white;
+            padding: 1rem 2.8rem;
+            border: none;
+            border-radius: 60px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1.2rem;
+            box-shadow: 0 12px 18px -10px rgba(79, 70, 229, 0.4), 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
+            letter-spacing: 0.01em;
+        }
+
+        .btn:hover {
+            background: #4338ca;
+            transform: translateY(-3px);
+            box-shadow: 0 22px 28px -12px rgba(79, 70, 229, 0.5);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+            box-shadow: 0 8px 14px -8px #4f46e5;
+        }
+
+        /* small, discreet confidentiality reminder */
+        .confidential-note {
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+
+        .confidential-note svg {
+            width: 16px;
+            height: 16px;
+            stroke: #475569;
+            stroke-width: 1.8;
+            fill: none;
+        }
+
+        /* responsive */
+        @media (max-width: 450px) {
+            .card { padding: 2rem 1.5rem; }
+            h1 { font-size: 1.9rem; }
+            .btn { font-size: 1.1rem; padding: 0.9rem 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <!-- abstract therapy / conversation symbol — calm, professional -->
+            <div class="illustration">
+                <svg class="calm-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- background circle soft -->
+                    <circle cx="40" cy="40" r="36" stroke="#E0E7FF" stroke-width="1.2" fill="#EEF2FF" />
+                    <!-- two abstract figures sitting, communicating / supporting -->
+                    <path d="M27 44 C27 38, 33 38, 33 44 L33 52 C33 58, 27 58, 27 52 L27 44Z" fill="#C7D2FE" stroke="#4F46E5" stroke-width="1.5" />
+                    <circle cx="30" cy="34" r="6" fill="#C7D2FE" stroke="#4F46E5" stroke-width="1.5" />
+                    <path d="M47 44 C47 38, 53 38, 53 44 L53 52 C53 58, 47 58, 47 52 L47 44Z" fill="#C7D2FE" stroke="#4F46E5" stroke-width="1.5" />
+                    <circle cx="50" cy="34" r="6" fill="#C7D2FE" stroke="#4F46E5" stroke-width="1.5" />
+                    <!-- gentle connecting line / speech or support line -->
+                    <path d="M36 46 L44 46" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 3" opacity="0.7"/>
+                    <!-- subtle heart or leaf for care -->
+                    <path d="M40 62 L42 60 C48 54, 54 58, 48 64 L40 70 L32 64 C26 58, 32 54, 38 60 L40 62Z" fill="#EEF2FF" stroke="#4F46E5" stroke-width="1.2" />
+                </svg>
+            </div>
+
+            <h1>You're not alone</h1>
+            <div class="tagline">a calm space, a caring ear</div>
+
+            <p>Talk to a trained MKU peer — anonymous, judgment‑free, and free.</p>
+
+            <a href="{% url 'peerlink:request_support' %}" class="btn">Find a peer</a>
+
+            <!-- discreet, professional footer note (exactly the same confidentiality message, elevated) -->
+            <div class="confidential-note">
+                <svg viewBox="0 0 24 24">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="currentColor" fill="#E0E7FF" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" fill="none" />
+                </svg>
+                <span>always anonymous & confidential</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

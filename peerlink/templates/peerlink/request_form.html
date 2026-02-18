@@ -1,0 +1,41 @@
+<!-- peerlink/templates/peerlink/request_form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Request Support</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial, sans-serif; padding: 2rem; background: #f8fafc; }
+        .form { max-width: 400px; margin: 0 auto; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        h2 { color: #4f46e5; text-align: center; }
+        label { display: block; margin-top: 1rem; font-weight: bold; }
+        input, select { width: 100%; padding: 10px; margin-top: 0.5rem; border: 1px solid #ddd; border-radius: 6px; }
+        .btn { background: #4f46e5; color: white; padding: 12px; border: none; border-radius: 8px; width: 100%; margin-top: 1.5rem; cursor: pointer; }
+        .disclaimer { font-size: 0.85rem; color: #64748b; margin-top: 1.5rem; }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <h2>Request Support</h2>
+        <form method="post">
+            {% csrf_token %}
+            <label for="phone">Phone Number (for session link)</label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g. 0712345678" required>
+
+            <label for="reason">What’s on your mind?</label>
+            <select name="reason" id="reason" required>
+                <option value="">Select...</option>
+                <option value="academic">Academic Stress</option>
+                <option value="lonely">Loneliness</option>
+                <option value="overwhelmed">Overwhelmed</option>
+                <option value="other">Other</option>
+            </select>
+
+            <button type="submit" class="btn">Find a Peer</button>
+        </form>
+        <p class="disclaimer">
+            ⚠️ PeerLink is not therapy. For emergencies, contact [MKU Wellness Office].
+        </p>
+    </div>
+</body>
+</html>

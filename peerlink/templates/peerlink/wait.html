@@ -1,0 +1,23 @@
+<!-- peerlink/templates/peerlink/wait.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Matching You...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 2rem; background: #f8fafc; }
+        .card { max-width: 500px; margin: 0 auto; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        h2 { color: #4f46e5; }
+        .spinner { border: 4px solid #f3f3f3; border-top: 4px solid #4f46e5; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 2rem auto; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        p { color: #64748b; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Matching you with a peer...</h2>
+        <div class="spinner"></div>
+        <p>We’ll connect you within minutes.<br>Your session is anonymous and confidential.</p>
+    </div>
+</body>
+</html>
