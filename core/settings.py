@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,8 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-^8+&fvv&cc1$i0x^c9#4xb2$p&li0s=$7i&i*jrdn+ydrqh0nf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
+DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
+CSRF_TRUSTED_ORIGINS = ['https://peerlink-mvp-production.up.railway.app']
 ALLOWED_HOSTS = [
     'peerlink-mvp-production.up.railway.app',
     '.railway.app',
