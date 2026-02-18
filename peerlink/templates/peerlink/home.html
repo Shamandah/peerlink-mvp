@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>PeerLink · compassionate support</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PeerLink · You're not alone</title>
+    <!-- same feel: clean, trustworthy, with a gentle therapeutic palette -->
     <style>
         * {
             margin: 0;
@@ -12,187 +14,506 @@
 
         body {
             font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background: linear-gradient(145deg, #f1f5f9 0%, #f8fafc 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
-            line-height: 1.5;
+            background: #f8fafc;
             color: #0f172a;
+            line-height: 1.5;
         }
 
         .container {
-            width: 100%;
-            max-width: 560px;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 2rem;
         }
 
-        /* main card – refined depth, softer palette */
-        .card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.1), 0 5px 12px -4px rgba(0, 0, 0, 0.05);
-            border-radius: 32px;
-            padding: 2.5rem 2rem;
-            text-align: center;
-            transition: transform 0.2s ease;
-        }
-
-        .card:hover {
-            transform: scale(1.005);
-        }
-
-        /* subtle illustration / therapeutic symbol */
-        .illustration {
-            margin-bottom: 1.8rem;
+        /* header / navigation — minimal, calm */
+        .navbar {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: #4f46e5;
+        }
+
+        .logo span {
+            background: #e0e7ff;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: #2c3e6d;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
             align-items: center;
         }
 
-        /* hand-drawn style abstract – two figures, calm interaction */
-        .calm-svg {
-            width: 100px;
-            height: 100px;
-            color: #4f46e5;
-            opacity: 0.9;
+        .nav-links a {
+            text-decoration: none;
+            color: #334155;
+            font-weight: 500;
+            transition: color 0.2s;
         }
 
-        /* main heading – softer weight, warm indigo */
-        h1 {
-            font-size: 2.2rem;
+        .nav-links a:hover {
+            color: #4f46e5;
+        }
+
+        .btn-outline {
+            border: 1.5px solid #cbd5e1;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
             font-weight: 500;
-            letter-spacing: -0.02em;
-            background: linear-gradient(145deg, #2c3e8f, #4f46e5);
+        }
+
+        .btn-outline:hover {
+            border-color: #4f46e5;
+            background: #f1f4f9;
+        }
+
+        /* hero section — main message */
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            padding: 3rem 0 5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1 1 400px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.2rem;
+            font-weight: 600;
+            line-height: 1.2;
+            background: linear-gradient(145deg, #1e293b, #4f46e5);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 0.75rem;
-            line-height: 1.2;
+            margin-bottom: 1.2rem;
         }
 
-        /* gentle tagline */
-        .tagline {
-            font-size: 1.2rem;
-            font-weight: 350;
+        .hero-text .subhead {
+            font-size: 1.3rem;
             color: #334155;
-            max-width: 380px;
-            margin: 0 auto 1.2rem auto;
+            font-weight: 350;
+            margin-bottom: 2rem;
+            max-width: 550px;
         }
 
-        /* descriptive paragraph – refined, spaced */
-        p {
-            font-size: 1rem;
-            color: #475569;
-            margin: 1.2rem 0 2rem 0;
-            padding: 0 0.5rem;
-            background: rgba(255, 255, 255, 0.6);
-            border-radius: 60px;
-            padding: 0.75rem 1.2rem;
-            display: inline-block;
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(226, 232, 240, 0.6);
-            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        .hero-buttons {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
         }
 
-        /* call to action – elevated, friendly */
-        .btn {
+        .btn-primary {
             background: #4f46e5;
             color: white;
-            padding: 1rem 2.8rem;
-            border: none;
-            border-radius: 60px;
-            font-size: 1.2rem;
-            font-weight: 500;
-            cursor: pointer;
+            padding: 0.8rem 2.2rem;
+            border-radius: 40px;
             text-decoration: none;
+            font-weight: 500;
+            box-shadow: 0 12px 20px -12px #4f46e5;
+            transition: all 0.2s;
+            border: none;
             display: inline-block;
-            margin-top: 1.2rem;
-            box-shadow: 0 12px 18px -10px rgba(79, 70, 229, 0.4), 0 4px 12px rgba(0, 0, 0, 0.05);
-            transition: all 0.2s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(4px);
-            letter-spacing: 0.01em;
         }
 
-        .btn:hover {
+        .btn-primary:hover {
             background: #4338ca;
-            transform: translateY(-3px);
-            box-shadow: 0 22px 28px -12px rgba(79, 70, 229, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 20px 28px -14px #4f46e5;
         }
 
-        .btn:active {
-            transform: translateY(0);
-            box-shadow: 0 8px 14px -8px #4f46e5;
+        .btn-secondary {
+            background: white;
+            color: #1e293b;
+            padding: 0.8rem 2.2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            border: 1px solid #cbd5e1;
+            transition: background 0.2s;
         }
 
-        /* small, discreet confidentiality reminder */
-        .confidential-note {
-            margin-top: 2rem;
-            font-size: 0.8rem;
-            color: #64748b;
+        .btn-secondary:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+
+        .hero-image {
+            flex: 1 1 300px;
+            background: #e9effa;
+            border-radius: 60px;
+            padding: 2rem;
+            text-align: center;
+            color: #2c3e6d;
+            min-height: 260px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.4rem;
-            opacity: 0.8;
-            font-weight: 400;
+            border: 2px solid white;
+            box-shadow: 0 30px 40px -20px rgba(0,0,0,0.2);
         }
 
-        .confidential-note svg {
-            width: 16px;
-            height: 16px;
-            stroke: #475569;
-            stroke-width: 1.8;
+        .hero-image svg {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+
+        /* features section — 3‑column cards (like afya mkononi) */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 500;
+            color: #0f172a;
+            margin: 3rem 0 1.2rem 0;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: #475569;
+            max-width: 650px;
+            margin: 0 auto 3rem auto;
+            font-size: 1.15rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0 4rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 36px;
+            padding: 2rem 1.8rem;
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 28px 38px -14px #cddffa;
+        }
+
+        .feature-icon {
+            background: #eef2ff;
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: #4f46e5;
+        }
+
+        .feature-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: currentColor;
             fill: none;
+            stroke-width: 1.8;
         }
 
-        /* responsive */
-        @media (max-width: 450px) {
-            .card { padding: 2rem 1.5rem; }
-            h1 { font-size: 1.9rem; }
-            .btn { font-size: 1.1rem; padding: 0.9rem 2.2rem; }
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #0f172a;
+        }
+
+        .feature-card p {
+            color: #475569;
+            margin: 0.8rem 0 1.4rem 0;
+            font-size: 1rem;
+        }
+
+        .feature-link {
+            color: #4f46e5;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .feature-link:hover {
+            gap: 0.7rem;
+        }
+
+        /* testimonials section — exactly as requested, with peer voices */
+        .testimonials {
+            background: #e9effa;
+            border-radius: 60px;
+            padding: 3rem 2.5rem;
+            margin: 4rem 0;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 500;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-sub {
+            text-align: center;
+            color: #2c3e6d;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(8px);
+            border-radius: 36px;
+            padding: 2rem 1.8rem;
+            border: 1px solid white;
+        }
+
+        .testimonial-card p {
+            font-style: normal;
+            font-size: 1rem;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .author-avatar {
+            width: 44px;
+            height: 44px;
+            background: #4f46e5;
+            border-radius: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .author-info h4 {
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .author-info span {
+            color: #475569;
+            font-size: 0.9rem;
+        }
+
+        /* footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 0 2rem 0;
+            color: #64748b;
+            border-top: 1px solid #dae2ec;
+            margin-top: 2rem;
+        }
+
+        .footer a {
+            color: #4f46e5;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="card">
-            <!-- abstract therapy / conversation symbol — calm, professional -->
-            <div class="illustration">
-                <svg class="calm-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- background circle soft -->
-                    <circle cx="40" cy="40" r="36" stroke="#E0E7FF" stroke-width="1.2" fill="#EEF2FF" />
-                    <!-- two abstract figures sitting, communicating / supporting -->
-                    <path d="M27 44 C27 38, 33 38, 33 44 L33 52 C33 58, 27 58, 27 52 L27 44Z" fill="#C7D2FE" stroke="#4F46E5" stroke-width="1.5" />
-                    <circle cx="30" cy="34" r="6" fill="#C7D2FE" stroke="#4F46E5" stroke-width="1.5" />
-                    <path d="M47 44 C47 38, 53 38, 53 44 L53 52 C53 58, 47 58, 47 52 L47 44Z" fill="#C7D2FE" stroke="#4F46E5" stroke-width="1.5" />
-                    <circle cx="50" cy="34" r="6" fill="#C7D2FE" stroke="#4F46E5" stroke-width="1.5" />
-                    <!-- gentle connecting line / speech or support line -->
-                    <path d="M36 46 L44 46" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 3" opacity="0.7"/>
-                    <!-- subtle heart or leaf for care -->
-                    <path d="M40 62 L42 60 C48 54, 54 58, 48 64 L40 70 L32 64 C26 58, 32 54, 38 60 L40 62Z" fill="#EEF2FF" stroke="#4F46E5" stroke-width="1.2" />
+        <!-- navigation (clean) -->
+        <nav class="navbar">
+            <div class="logo">
+                🌱 PeerLink
+                <span>you're not alone</span>
+            </div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">How it works</a>
+                <a href="#">For peers</a>
+                <a href="#" class="btn-outline">Sign in</a>
+            </div>
+        </nav>
+
+        <!-- hero: "Pregnancy health ..." adapted to peer support -->
+        <div class="hero">
+            <div class="hero-text">
+                <h1>You're not alone<br>Talk to a peer who cares</h1>
+                <div class="subhead">Anonymous, judgment‑free support from trained MKU students — whenever you need to be heard.</div>
+                <div class="hero-buttons">
+                    <a href="{% url 'peerlink:request_support' %}" class="btn-primary">Find a peer →</a>
+                    <a href="#" class="btn-secondary">How it works</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- abstract comfort illustration (two figures, gentle support) -->
+                <svg viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="40" cy="40" r="26" stroke="#4f46e5" stroke-width="2" fill="#ffffff" opacity="0.9" />
+                    <circle cx="80" cy="40" r="26" stroke="#4f46e5" stroke-width="2" fill="#ffffff" opacity="0.9" />
+                    <path d="M54 46 Q60 58, 66 46" stroke="#4f46e5" stroke-width="2.5" fill="none" stroke-linecap="round" />
+                    <circle cx="32" cy="34" r="4" fill="#4f46e5" />
+                    <circle cx="48" cy="34" r="4" fill="#4f46e5" />
+                    <circle cx="72" cy="34" r="4" fill="#4f46e5" />
+                    <circle cx="88" cy="34" r="4" fill="#4f46e5" />
+                    <rect x="10" y="70" width="100" height="14" rx="12" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.5" />
+                    <text x="32" y="82" font-family="system-ui" fill="#2c3e6d" font-size="12">we hear you</text>
                 </svg>
             </div>
-            <h1>PEER LINK</h1>
-            <div class="tagline">a calm space, a caring ear</div>
+        </div>
 
-            <p>Talk to a trained MKU peer — anonymous, judgment‑free, and free.</p>
+        <!-- Comprehensive Peer Support (mirroring "Comprehensive Maternal Care") -->
+        <h2 class="section-title">Gentle, human support — right when you need it</h2>
+        <p class="section-sub">PeerLink gives you a safe space to talk, with tools that help you feel grounded.</p>
 
-            <a href="{% url 'peerlink:request_support' %}" class="btn">Find a peer</a>
-
-            <!-- discreet, professional footer note (exactly the same confidentiality message, elevated) -->
-            <div class="confidential-note">
-                <svg viewBox="0 0 24 24">
-                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="currentColor" fill="#E0E7FF" />
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" fill="none" />
-                </svg>
-                <span>always anonymous & confidential</span>
+        <div class="features-grid">
+            <!-- 1. text chat (like video consultations) -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                    </svg>
+                </div>
+                <h3>Text Chat</h3>
+                <p>Connect with a trained peer through secure, anonymous messaging. No pressure, just a real listener.</p>
+                <a href="#" class="feature-link">Talk now →</a>
             </div>
+            <!-- 2. Audio (coming soon) but we frame as "Voice support" -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z" />
+                        <path d="M19 12a7 7 0 0 1-14 0" />
+                    </svg>
+                </div>
+                <h3>Audio Calls</h3>
+                <p>Sometimes hearing a voice helps. Secure, one‑to‑one calls (coming soon to PeerLink).</p>
+                <span style="color:#94a3b8; font-size:0.9rem;">soon</span>
+            </div>
+            <!-- 3. AI Helper (like AI assistant) -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="9" y="2" width="6" height="6" rx="1" />
+                        <path d="M6 8h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2z" />
+                        <circle cx="9" cy="14" r="1" fill="currentColor" />
+                        <circle cx="15" cy="14" r="1" fill="currentColor" />
+                    </svg>
+                </div>
+                <h3>AI Helper</h3>
+                <p>Immediate, gentle guidance — 24/7 answers to common questions while you wait.</p>
+                <a href="#" class="feature-link">Chat with AI →</a>
+            </div>
+            <!-- 4. Grounding exercises (parallel to meal planner) -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                </div>
+                <h3>Quick grounding</h3>
+                <p>Breathe, pause, reset. Simple exercises to calm anxiety in moments of overwhelm.</p>
+                <a href="#" class="feature-link">Try now →</a>
+            </div>
+            <!-- 5. Peer education / resources (like pregnancy education) -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                    </svg>
+                </div>
+                <h3>Stories & tools</h3>
+                <p>Short articles and videos on coping, loneliness, and resilience — from peers who understand.</p>
+                <a href="#" class="feature-link">Explore →</a>
+            </div>
+            <!-- 6. Appointment scheduling (same as original, but peer matching) -->
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                </div>
+                <h3>Schedule a chat</h3>
+                <p>Book a time that works for you. Consistent support from the same peer, weekly.</p>
+                <a href="#" class="feature-link">Schedule now →</a>
+            </div>
+        </div>
+
+        <!-- Testimonials: exactly like "What Mothers Are Saying" but for peers -->
+        <div class="testimonials">
+            <h2>What students are saying</h2>
+            <div class="testimonial-sub">Hear from peers who found comfort through PeerLink</div>
+
+            <div class="testimonial-grid">
+                <!-- StudentC. -> first testimonial -->
+                <div class="testimonial-card">
+                    <p>“Being able to talk to another student who just listened — no judgment — helped me through my toughest exam week. PeerLink made me feel seen.”</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">N</div>
+                        <div class="author-info">
+                            <h4>Student C.</h4>
+                            <span>Nairobi · 2nd year</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Student B. second -->
+                <div class="testimonial-card">
+                    <p>“I texted the AI helper at 2 AM when anxiety spiked. It gave me a grounding exercise and reminded me I’m not alone until a peer responded.”</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">F</div>
+                        <div class="author-info">
+                            <h4>Student B.</h4>
+                            <span>Mombasa · 4th year</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Student A. third -->
+                <div class="testimonial-card">
+                    <p>“Living off‑campus, I felt isolated. PeerLink connected me with peers who get it. The weekly chats are now something I look forward to.”</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">B</div>
+                        <div class="author-info">
+                            <h4>Student A</h4>
+                            <span>Kisumu · graduate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer (gentle) -->
+        <div class="footer">
+            <p>🌱 PeerLink — anonymous, free, for MKU students. <a href="#">Find a peer</a></p>
+            <p style="margin-top:1rem; font-size:0.85rem;">© 2025 PeerLink · all conversations are confidential</p>
         </div>
     </div>
 </body>
-</html>
+</html> what are the adjustments if the home.html is to be this way 
