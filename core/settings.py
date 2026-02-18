@@ -25,7 +25,12 @@ SECRET_KEY = 'django-insecure-^8+&fvv&cc1$i0x^c9#4xb2$p&li0s=$7i&i*jrdn+ydrqh0nf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'peerlink-mvp-production.up.railway.app',
+    '.railway.app',
+    'localhost',
+    '127.0.0.1',
+]
 
 
 # Application definition
